@@ -1,25 +1,26 @@
 class Solution {
     public int firstUniqChar(String s) {
-        // approach
-        
-// ✅ Idea
 
-// First pass → Count frequency of each character.
+        for (int i = 0; i < s.length(); i++) {
+            int count = 0;
 
-// Second pass → Find the first character whose frequency is 1.
+            for (int j = 0; j < s.length(); j++) {
 
-        HashMap<Character,Integer>ss=new HashMap<>();
-        for(char c:s.toCharArray()){
-            ss.put(c,ss.getOrDefault(c,0)+1);
-        }
-        for(int i=0;i<s.length();i++){
-            if(ss.get(s.charAt(i))==1){
+                if (s.charAt(i) == s.charAt(j)) {
+                    count++;
+
+                    // 🔴 important optimization
+                    if (count > 1) {
+                        break;
+                    }
+                }
+            }
+
+            if (count == 1) {
                 return i;
             }
         }
+
         return -1;
-   
-   
-   
     }
 }
