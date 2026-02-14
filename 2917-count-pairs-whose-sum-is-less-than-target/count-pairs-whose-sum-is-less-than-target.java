@@ -9,10 +9,10 @@ class Solution {
             if(diff<target){
                 count+=(right-left);
                 left++;
-
             }else{
                 right--;
             }
+
         }
         return count;
     }
