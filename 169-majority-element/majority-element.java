@@ -5,7 +5,7 @@ class Solution {
             ss.put(i,ss.getOrDefault(i,0)+1);
         }
         int n=nums.length;
-        for(int i:ss.keySet()){
+        for(int i:nums){
             if(ss.get(i)>n/2){
                 return i;
             }
