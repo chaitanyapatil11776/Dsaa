@@ -17,8 +17,8 @@ class Solution {
         }
 
         List<Integer> result = new ArrayList<>();
-        for (int i = low; i < low + k; i++) {
-            result.add(arr[i]);
+        for (int i = 0; i <  k; i++) {
+            result.add(arr[low+i]);
         }
 
         return result;
