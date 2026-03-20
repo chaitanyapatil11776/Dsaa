@@ -19,13 +19,12 @@ class Solution {
         if(root==null)return 0;
         int left=Math.max(ss(root.left),0);
         int right=Math.max(ss(root.right),0);
-    int max=root.val+left+right;
-    sum=Math.max(sum,max);
-    return root.val+Math.max(left,right);
+        int max=root.val+left+right;
+        sum=Math.max(sum,max);
+        return root.val+Math.max(left,right);
     }
     public int maxPathSum(TreeNode root) {
         ss(root);
         return sum;
-        
     }
 }
