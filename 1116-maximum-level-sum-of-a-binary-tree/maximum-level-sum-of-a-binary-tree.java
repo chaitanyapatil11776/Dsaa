@@ -19,7 +19,7 @@ class Solution {
         que.add(root);
         int level=0;
         int maxlevel=0;
-        Long maxsum=Long.MIN_VALUE;
+        long maxsum=Long.MIN_VALUE;
         while(!que.isEmpty()){
             // TreeNode curr=que.poll();
              long sum=0;
