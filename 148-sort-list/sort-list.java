@@ -33,7 +33,7 @@ class Solution {
     }
 
     ListNode merge(ListNode h1, ListNode h2) {
-        ListNode dummy = new ListNode(-1);
+        ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
 
         while (h1 != null && h2 != null) {
