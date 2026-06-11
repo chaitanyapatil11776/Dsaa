@@ -1,12 +1,15 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        for(int i=0;i<nums.length;i++){
-            int count=0;
-            for(int j=0;j<nums.length;j++){
-                if(nums[i]==nums[j])count++;
+        HashMap<Integer,Integer>ss=new HashMap<>();
+        for(int i:nums){
+            ss.put(i,ss.getOrDefault(i,0)+1);
+        }
+        for(int i:ss.keySet()){
+            if(ss.get(i)==1){
+                return i;
             }
-            if(count==1)return nums[i];
         }
         return -1;
+
     }
 }
