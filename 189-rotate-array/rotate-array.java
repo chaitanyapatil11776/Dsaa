@@ -1,5 +1,6 @@
 class Solution {
     void ss(int nums[],int left,int right){
+
         while(left<right){
             int temp=nums[left];
             nums[left]=nums[right];
