@@ -10,6 +10,7 @@ class Solution {
             right-=nums[i];
             if(left==right){
                 return i;
+
             }
             left+=nums[i];
         }
