@@ -1,25 +1,26 @@
 class Solution {
     public boolean validPalindrome(String s) {
-        int l=0;
-        int r=s.length()-1;
-        while(l<r){
-            if(s.charAt(l)!=s.charAt(r)){
-
-                return ss(s,l+1,r) ||ss(s,l,r-1);
+        int left=0;
+        int right=s.length()-1;
+        while(left<right){
+            if(s.charAt(left)!=s.charAt(right)){
+                return check(s,left+1,right) || check(s,left,right-1);
             }
-            l++;
-            r--;
+            left++;
+            right--;
         }
         return true;
     }
-    boolean ss(String s,int l,int r){
-       
-        while(l<r){
-            if(s.charAt(l)!=s.charAt(r)){
-                return false;
-            }
-            l++;
-            r--;
-        }return true;
+
+    boolean check (String s,int left,int right){
+         
+    
+        while(left<right){
+            if(s.charAt(left)!=s.charAt(right))return false;
+            left++;
+            right--;
+        }
+        return true;
+
     }
 }
