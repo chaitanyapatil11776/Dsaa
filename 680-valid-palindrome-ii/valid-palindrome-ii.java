@@ -8,19 +8,22 @@ class Solution {
             }
             left++;
             right--;
+
         }
         return true;
     }
 
-    boolean check (String s,int left,int right){
-         
+   boolean check(String s,int left,int right){
+    while(left<right){
+        if(s.charAt(left)!=s.charAt(right)){
+            return false;
+        }left++;
+        right--;
+
     
-        while(left<right){
-            if(s.charAt(left)!=s.charAt(right))return false;
-            left++;
-            right--;
-        }
-        return true;
 
     }
+    return  true;
+
+}
 }
