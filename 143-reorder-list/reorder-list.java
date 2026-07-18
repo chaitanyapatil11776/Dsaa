@@ -9,8 +9,11 @@
  * }
  */
 class Solution {
+
     ListNode rev(ListNode head){
-        ListNode curr=head,next=null,prv=null;
+        ListNode next=null;
+        ListNode prv=null;
+        ListNode curr=head;
         while(curr!=null){
             next=curr.next;
             curr.next=prv;
@@ -18,27 +21,28 @@ class Solution {
             curr=next;
         }
         return prv;
-
     }
-
     public void reorderList(ListNode head) {
-ListNode     slow=head,fast=head;
-while(fast!=null && fast.next!=null){
-    slow=slow.next;
-    fast=fast.next.next;
-}
-ListNode sec=rev(slow.next);
-slow.next=null;
-ListNode first=head;
-while(sec!=null){
-    ListNode temp1=first.next;
-    ListNode temp2=sec.next;
+        ListNode s=head;
+        ListNode f=head;
+        while(f!=null && f.next!=null){
+            s=s.next;
+            f=f.next.next;
+        }
+        ListNode sec=rev(s.next);
+        s.next=null;
 
-    first.next=sec;
-    sec.next=temp1;
-    first=temp1;
-    sec=temp2;
-}
+        ListNode first=head;
+        while(sec!=null){
+            ListNode f1=first.next;
+            ListNode f2=sec.next;
+            first.next=sec;
+            sec.next=f1;
+            first=f1;
+            sec=f2;
+
+
+        }
 
     }
 }
