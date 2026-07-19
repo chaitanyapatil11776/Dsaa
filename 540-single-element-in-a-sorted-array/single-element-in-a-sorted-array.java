@@ -1,20 +1,14 @@
-import java.util.*;
-
 class Solution {
     public int singleNonDuplicate(int[] nums) {
-
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        for (int num : nums) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
+        HashMap<Integer,Integer>ss=new HashMap<>();
+        for(int i:nums){
+            ss.put(i,ss.getOrDefault(i,0)+1);
         }
-
-        for (int num : nums) {
-            if (map.get(num) == 1) {
-                return num;
+        for(int a:ss.keySet()){
+            if(ss.get(a)==1){
+                return a;
             }
         }
-
         return -1;
     }
 }
