@@ -14,8 +14,8 @@ class Solution {
                 }else{
                     max=Math.max(max,i-ss.peek());
                 }
+
             }
-        }
-        return max;
+        }return max;
     }
 }
