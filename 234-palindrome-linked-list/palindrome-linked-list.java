@@ -10,24 +10,20 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-
         ListNode s=head;
         ListNode f=head;
-
         while(f!=null && f.next!=null){
             s=s.next;
             f=f.next.next;
-
         }
-        ListNode prv=null;
+
         ListNode next=null;
-      
+        ListNode prv=null;
         while(s!=null){
             next=s.next;
             s.next=prv;
             prv=s;
             s=next;
-
         }
 
 
@@ -38,7 +34,7 @@ class Solution {
             prv=prv.next;
             head=head.next;
         }
-        return true;
 
+        return true;
     }
 }
