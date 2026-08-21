@@ -23,9 +23,9 @@ class Solution {
         for(int a:ss){
             curr.next=new ListNode(a);
             curr=curr.next;
-
         }
+
         return dummy.next;
+       
     }
-    
 }
